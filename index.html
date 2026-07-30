@@ -24,17 +24,43 @@
 
     <main>
         <section class="left-section">
+            <div class="song-info">
+                <h2>NOW PLAYING...</h2>
+                <div class="now-play-img"></div>
+                <h2 id="song-name">Remember Summer Days</h2>
+                <h4 id="artist-name">Anri</h4>
+            </div>
 
+            <div class="volume-control">
+                <h2>VOLUME</h2>
+                <div id="volume-knob" class="knob">
+                    <svg viewBox="0 0 220 220">
+                        <!-- rayitas -->
+                        <g id="ticks"></g>
+                        <!-- aro -->
+                        <circle class="ring" cx="110" cy="110" r="66" />
+                        <!-- aguja -->
+                        <line id="needle" x1="110" y1="110" x2="110" y2="66" />
+                        <!-- centro -->
+                        <circle class="center-dot" cx="110" cy="110" r="7" />
+                    </svg>
+
+                    <span class="min">MIN</span>
+                    <span class="max">MAX</span>
+                </div>
+            </div>
         </section>
 
         <section class="center-section">
-
+            <audio id="player" src="https://lil-surrounding-warnings-revolution.trycloudflare.com/FREEQNCY" autoplay></audio>
         </section>
 
         <section class="right-section">
 
         </section>
     </main>
+
+    <script src="js/volumeManager.js"></script>
 </body>
 </html>
 

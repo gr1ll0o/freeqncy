@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FREEQNCY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -52,7 +53,12 @@
         </section>
 
         <section class="center-section">
-            
+            <video class="background-video" autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload noplaybackrate">
+                <source src="assets/videos/lobby-background.mp4" type="video/mp4">
+            </video>
+
+            <img id="center-img" src="assets/imgs/png-logo.png">
+            <div id="playBtn"><i id="play-control" class="fa-solid far fa-play-circle red"></i></div>
         </section>
 
         <section class="right-section">
@@ -66,7 +72,10 @@
         crossorigin="anonymous"
         autoplay
     ></audio>
+
     <script src="js/volumeManager.js"></script>
+    <script src="js/playPauseManager.js"></script>
+    <script>document.querySelector(".background-video").playbackRate = 1.25;</script>
 </body>
 </html>
 

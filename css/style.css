@@ -8,7 +8,7 @@
 body {
     margin: 15px;
     height: calc(100vh - 30px);
-    overflow: hidden;
+
 }
 
 body::before {
@@ -125,7 +125,7 @@ main>section:first-child {
     justify-self: start;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: start;
 }
 
 .song-info {

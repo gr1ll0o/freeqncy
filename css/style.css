@@ -250,6 +250,49 @@ main>section:nth-child(2) {
     justify-self: center;
 }
 
+@keyframes backgroundMove {
+    0% {
+        transform: scale(1.00);
+    }
+
+    50% {
+        transform: scale(1.8) translateY(50px);
+    }
+
+    100% {
+        transform: scale(1.00);
+    }
+}
+
+.center-section {
+    position: relative;
+    background: none;
+    overflow: hidden;
+}
+
+.center-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../assets/imgs/bg/lobby-img.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    opacity: 0.4;
+    /* 0 = transparente, 1 = opaco */
+    z-index: 0;
+
+    transition: all ease 0.5s;
+    animation: backgroundMove 16s ease-in-out infinite;
+}
+
+.center-section>* {
+    position: relative;
+    z-index: 1;
+}
+
 /* Right Aside */
 main>section:last-child {
     justify-self: end;

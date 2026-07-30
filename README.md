@@ -1,6 +1,6 @@
 <div align="center">
 
-![FREEQNCY](/assets/png-logo.png)
+![FREEQNCY](/assets/imgs/png-logo.png)
 
 ### *A self-hosted real-time internet radio platform.*
 

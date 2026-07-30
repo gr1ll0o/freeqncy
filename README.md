@@ -52,8 +52,7 @@ As an avid music lover, the station will broadcast songs that match my musical t
 - 🌍 Multiple synchronized listeners
 - 📻 Icecast streaming server
 - ⚙️ Liquidsoap automation
-- 🎼 Playlist management
-- 🖥️ Custom web player
+- 🖥️ Retro web player
 - 📱 Responsive interface
 - 🔄 Automatic metadata updates
 

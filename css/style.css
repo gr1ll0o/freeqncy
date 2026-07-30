@@ -51,7 +51,7 @@ li {
 }
 
 header, section {
-    background-color: rgba(0, 1, 31, 0.8);
+    background-color: rgba(0, 1, 31, 0.7);
 }
 
 header {
@@ -184,9 +184,13 @@ main>section:first-child {
 }
 
 .knob svg {
-    width: clamp(100px, 18vh, 220px);
+    width: clamp(50px, 13vh, 220px);
     height: auto;
     overflow: visible;
+}
+
+.knob span {
+    font-size: clamp(8px, 12px, 20px);
 }
 
 .ring {

@@ -95,6 +95,6 @@ function update(e) {
 
 knob.addEventListener("wheel", e => {
     e.preventDefault();
-    const current = Math.pow(gainNode.gain.value / 2, 1 / 1.8);
+    const current = Math.pow(gainNode.gain.value / 2, 1 / 2.6);
     setVolume(current - (e.deltaY * .001));
 }, { passive: false });

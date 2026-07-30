@@ -1,3 +1,14 @@
 * {
     margin: 0 auto;
 }
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("../assets/imgs/bg/body-background.png") center/cover no-repeat;
+    filter: blur(2.2px);
+    transform: scale(1.03);
+    /* evita bordes transparentes por el blur */
+    z-index: -1;
+}

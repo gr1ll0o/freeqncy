@@ -1,5 +1,6 @@
 const listenersDisplay = document.getElementById('listeners-display');
 
+const coverAlbumDisplay = document.getElementById('cover-display');
 const songNameDisplay = document.getElementById('song-name');
 const artistNameDisplay = document.getElementById('artist-name');
 
@@ -29,6 +30,9 @@ async function getPing() {
         pingDisplay.textContent = "PING: " + ping + "ms";
     } catch (error) {
         pingDisplay.textContent = "PING: --:--";
+        stateDisplay.textContent = "𒊹 NO SIGNAL"
+        stateDisplay.style.color = "#666";
+        statusDisplay.textContent = "STATUS: OFFLINE";
         throw new Error("The ping could not be measured.");
     }
 }
@@ -60,14 +64,23 @@ async function getIcecastStats() {
     let listeners = data.icestats.source.listeners;
     listenersDisplay.textContent = "listeners: " + listeners;
 
-    // Artist & Title !!! //    
-    let songData = data.icestats.source.metadata.x_icy_title;
-    const separator = songData.indexOf(" - ");
-    const artist = songData.substring(0, separator); 
-    const title = songData.substring(separator + 3); 
+    // Artist, Title & Album !!!
+    const songData = data.icestats.source.metadata.x_icy_title;
+
+    const [artist, titleAlbum] = songData.split(" - ");
+    const [title, album] = titleAlbum.split(" | ");
 
     songNameDisplay.textContent = title;
     artistNameDisplay.textContent = artist;
+
+    const coverName = album
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-");
+
+    const coverPath = `assets/covers/${coverName}.jpg`;
+    
+    coverAlbumDisplay.innerHTML = `<img src="${coverPath}">`
 
     // Status !!! //
     statusDisplay.textContent = "STATUS: ONLINE";

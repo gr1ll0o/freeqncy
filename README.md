@@ -126,16 +126,18 @@ FREEQNCY
 
 # 🎯 Roadmap
 
-<!-- - [ ] REST API -->
 - [x] Configure Icecast
 - [x] Configure Liquidsoap
 - [x] Stream local audio
-- [ ] HTTPS
-- [ ] Custom frontend
-- [ ] Live metadata
-- [ ] Album artwork
-- [ ] Listener counter
-- [ ] Mobile support
+- [X] HTTPS
+- [X] Custom frontend
+- [X] Live metadata
+- [X] Album artwork
+- [X] Listener counter
+- [X] Mobile support
+- [ ] Better Player
+- [ ] Status Recognition
+- [ ] Documentation
 
 ---
 

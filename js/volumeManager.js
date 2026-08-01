@@ -9,8 +9,17 @@ const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const source = audioContext.createMediaElementSource(player);
 const gainNode = audioContext.createGain();
 
+const analyser = audioContext.createAnalyser();
+
+analyser.fftSize = 256;
+analyser.smoothingTimeConstant = 0.8;
+
+const bufferLength = analyser.frequencyBinCount;
+const dataArray = new Uint8Array(bufferLength);
+
 source.connect(gainNode);
-gainNode.connect(audioContext.destination);
+gainNode.connect(analyser);
+analyser.connect(audioContext.destination);
 
 for (let i = 0; i < TOTAL; i++) {
 

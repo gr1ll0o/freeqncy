@@ -461,6 +461,7 @@ main>section:last-child>.square3:first-child {
 main>section:last-child>.volume-control {
     flex: 1 1 0;
     min-height: 0;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -488,16 +489,32 @@ main>section:last-child>.social-media {
 .stats-panel {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    height: auto;
+    min-height: 0;
+    gap: 4px;
+}
+
+#stats {
+    flex: 0 0 auto;
+    margin: 0;
 }
 
 #credits {
-    display: flex;
-    justify-content: center;
-    font-size: clamp(6px, 9px, 10px);
-    margin: 0 auto;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: clamp(0.5em, 0.72em, 1em);
+    line-height: 1;
+}
 
+#credits {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(0.5em, 0.72em, 1em);
+    margin: 0;
     color: #1f7d8c;
     font-style: italic;
 }
@@ -572,7 +589,7 @@ main>section:last-child>.social-media {
     }
 
     #logo {
-        height: clamp(80px, 120px, 120px);
+        height: clamp(80px, 100px, 120px);
     }
 
     #center-img {

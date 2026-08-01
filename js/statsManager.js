@@ -26,11 +26,10 @@ async function getPing() {
         }
 
         const ping = Math.round(end - start);
-
         pingDisplay.textContent = "PING: " + ping + "ms";
-
     } catch (error) {
-        console.log("No se pudo medir el ping");
+        pingDisplay.textContent = "PING: --:--";
+        throw new Error("The ping could not be measured.");
     }
 }
 
@@ -93,8 +92,6 @@ async function getIcecastStats() {
 
     bitRateDisplay.textContent = "BITRATE: " + audioStats.bitrate + "kbps";
 }
-
-getPing();
 
 setInterval(getIcecastStats, 1000);
 setInterval(getPing, 5000);

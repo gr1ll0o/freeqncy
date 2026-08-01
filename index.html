@@ -26,7 +26,9 @@
     <main>
         <section class="left-section">
             <div style="margin-bottom: -5px" class="song-info">
-                <h2>▶ NOW PLAYING...</h2>
+                <div class="panel-title">
+                    <h2 class="red">▶ NOW PLAYING...</h2>
+                </div>
                 <div class="now-play-img"></div>
                 <h2 id="song-name">Remember Summer Days</h2>
                 <h4 id="artist-name">Anri</h4>
@@ -37,7 +39,9 @@
             </div>
 
             <div style="margin-top: 8px;" class="volume-control">
-                <h2>VOLUME</h2>
+                <div class="panel-title">
+                    <h2 class="red">VOLUME</h2>
+                </div>
                 <div id="volume-knob" class="knob">
                     <svg viewBox="0 0 220 220">
                         <g id="ticks"></g>
@@ -63,30 +67,44 @@
 
         <section class="right-section">
             <div class="square3">
-                <h2 style="margin-top: -6px;margin-bottom: 2px;font-size: clamp(14px, 2vh, 22px)">SCHEDULE</h2>
-                    <div style="margin-bottom: -8px;" class="schedule">
-                        <div id="mornin-waves-hour">
-                            <h3>06:00 - 12:00</h3>
-                            <h2>MORNIN' WAVES</h2>
-                        </div>
-                        <div id="afternoon-grooves-hour">
-                            <h3>12:00 - 18:00</h3>
-                            <h2>AFTERNOON GROOVES</h2>
-                        </div>
-                        <div id="night-ride-hour">
-                            <h3>18:00 - 00:00</h3>
-                            <h2>NIGHT RIDE</h2>
-                        </div>
-                        <div id="midnight-city-hour">
-                            <h3>00:00 - 06:00</h3>
-                            <h2>MIDNIGHT CITY</h2>
-                        </div>
+                <div class="panel-title" style="margin-top: -6px;margin-bottom: 2px;font-size: clamp(14px, 2vh, 22px);">
+                    <h2 class="red">SCHEDULE</h2>
+                </div>
+                <div style="margin-bottom: -8px;" class="schedule">
+                    <div id="mornin-waves-hour">
+                        <h3>06:00 - 12:00</h3>
+                        <h2>MORNIN' WAVES</h2>
                     </div>
+                    <div id="afternoon-grooves-hour">
+                        <h3>12:00 - 18:00</h3>
+                        <h2>AFTERNOON GROOVES</h2>
+                    </div>
+                    <div id="night-ride-hour">
+                        <h3>18:00 - 00:00</h3>
+                        <h2>NIGHT RIDE</h2>
+                    </div>
+                    <div id="midnight-city-hour">
+                        <h3>00:00 - 06:00</h3>
+                        <h2>MIDNIGHT CITY</h2>
+                    </div>
+                </div>
             </div>
             
             <div class="volume-control">
-                <h2>VOLUME</h2>
-                
+                <div class="panel-title">
+                    <h2 class="red">STREAM STATS</h2>
+                </div>
+                <div style="font-size: clamp(8px, 11px, 14px);">
+                    <p>STATUS: CONNECTED</p>
+                    <p>UPTIME: 02:00:42</p>
+                    <p>BITRATE: 320kbp/s</p>
+                </div>
+            </div>
+
+            <div class="social-media square3">
+                <a href=""><i class="fa-solid fa-brands fa-spotify"></i></a>
+                <a href=""><i class="fa-solid fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-solid fa-brands fa-github"></i></a>
             </div>
         </section>
     </main>

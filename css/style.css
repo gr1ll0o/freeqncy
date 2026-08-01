@@ -20,6 +20,27 @@ body::before {
     z-index: -1;
 }
 
+.panel-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.panel-title h2 {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.panel-title::after {
+    content: "";
+    flex: 1;
+    min-width: 0;
+    height: 1px;
+    background: #e01f83;
+    opacity: 0.5;
+}
+
 #logo {
     transition: all ease 0.5s; 
 }
@@ -47,7 +68,7 @@ ul {
 }
 
 li {
-    margin: 20px;
+    margin: clamp(10px, 2vw, 40px);
 }
 
 header, section {
@@ -100,13 +121,25 @@ header li {
 
 main {
     height: calc(100% - 120px);
-    align-items: center;
-    border-radius: 12px;
+
     display: grid;
     grid-template-columns: 2fr 6fr 2fr;
-    align-items: center;
+
+    align-items: stretch;
+
     margin-top: 15px;
     gap: 12px;
+
+    min-height: 0;
+}
+
+main>section {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    min-width: 0;
+    min-height: 0;
 }
 
 section {
@@ -123,9 +156,12 @@ main>section {
 /* Left Aside */
 main>section:first-child {
     justify-self: start;
+
     display: flex;
     flex-direction: column;
-    justify-content: start;
+
+    min-height: 0;
+    overflow: hidden;
 }
 
 .song-info {
@@ -139,6 +175,11 @@ main>section:first-child {
 
     border: 1.5px solid #32163f;
     border-radius: 12px;
+
+    flex: 1 1 0;
+    
+    min-height: 0;
+    overflow: hidden;
 }
 
 .song-info,
@@ -173,6 +214,9 @@ main>section:first-child {
     margin-top: 10px;
     border: 1.5px solid #32163f;
     border-radius: 12px;
+
+    min-height: 0;
+    overflow: hidden;
 }
 
 .knob {
@@ -251,6 +295,10 @@ main>section:nth-child(2) {
     justify-self: center;
 }
 
+main>section:first-child>.square3 {
+    flex: 0 0 auto;
+}
+
 .center-section {
     background: none;
     position: relative;
@@ -300,9 +348,24 @@ main>section:nth-child(2) {
     color: #7b194d;
 }
 
+main>section:first-child>.volume-control {
+    flex: 2 0 1;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
 /* Right Aside */
 main>section:last-child {
     justify-self: end;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+    overflow: hidden;
 }
 
 .square {
@@ -344,26 +407,64 @@ main>section:last-child {
     border-radius: 12px;
 }
 
+main>section:last-child>.square3:first-child {
+    /*
+     * SCHEDULE ocupa la mayor parte
+     * del espacio disponible.
+     */
+    flex: 3 1 0;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
 .schedule-container {
     display: flex;
     justify-content: space-around;
 }
 
-.schedule>div {
-    width: 100%;
-    box-sizing: border-box;
-    border: 1.5px solid #0f0841;
-    border-left: 0;
-    border-right: 0;
-    padding: 6px 15px 6px 15px;
-}
-
 .schedule {
     width: 100%;
     text-align: start;
+
     border: 1.5px solid #0f0841;
     border-radius: 12px;
+
     font-size: clamp(6px, 12px, 16px);
+
+    /*
+     * El schedule ocupa todo el espacio
+     * disponible dentro del panel.
+     */
+    flex: 1 1 0;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule>div {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1.5px solid #0f0841;
+    border-left: 0;
+    border-right: 0;
+
+    padding: 6px 15px;
+
+    flex: 1 1 0;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #mornin-waves-hour {
@@ -372,4 +473,100 @@ main>section:last-child {
 
 #midnight-city-hour {
     border-bottom: 0;
+}
+
+main>section:last-child>.volume-control {
+    flex: 1 1 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+main>section:last-child>.volume-control>div:last-child {
+    font-size: clamp(8px, 1vh, 12px);
+}
+
+.social-media {
+    flex: 0 0 auto;
+
+    padding: 12px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+    flex-direction: row;
+
+    font-size: clamp(16px, 3vh, 28px);
+
+    justify-content: space-evenly;
+}
+
+main>section:last-child>.social-media {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+@media (max-height: 600px) {
+
+    body {
+        height: auto;
+        min-height: calc(100vh - 30px);
+    }
+
+    main {
+        height: auto;
+        min-height: 0;
+    }
+
+    main>section:first-child,
+    main>section:last-child {
+        overflow-y: auto;
+    }
+
+    main>section:first-child>.song-info,
+    main>section:first-child>.volume-control,
+    main>section:last-child>.square3:first-child,
+    main>section:last-child>.volume-control {
+        flex: 0 0 auto;
+    }
+
+    main>section:first-child .now-play-img {
+        width: clamp(80px, 15vh, 180px);
+    }
+
+    main>section:first-child .knob {
+        flex: 0 0 auto;
+    }
+
+    main>section:last-child .schedule {
+        flex: 0 0 auto;
+    }
+
+    main>section:last-child .schedule>div {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 900px) {
+
+    body {
+        height: auto;
+        min-height: calc(100vh - 30px);
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    main>section:first-child,
+    main>section:last-child {
+        height: auto;
+        min-height: 500px;
+    }
+
+    main>section:nth-child(2) {
+        min-height: 500px;
+    }
 }

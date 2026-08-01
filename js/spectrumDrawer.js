@@ -1,4 +1,5 @@
 const canvas = document.getElementById("spectrum");
+const disableCanvas = document.querySelector('#disable-eq');
 const ctx = canvas.getContext("2d");
 
 const BAR_COUNT = 40;
@@ -25,8 +26,13 @@ window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
 // DRAW SPECTRUM
+let animationId = null;
+let spectrumEnabled = true;
+
 function drawSpectrum() {
-    requestAnimationFrame(drawSpectrum);
+    if (!spectrumEnabled) return;
+
+    animationId = requestAnimationFrame(drawSpectrum);
 
     const now = performance.now();
     const deltaTime = Math.min(now - lastTime, 50);
@@ -39,43 +45,32 @@ function drawSpectrum() {
 
     ctx.clearRect(0, 0, width, height);
 
-    // BAR DIMENSIONS
     const barWidth = width / BAR_COUNT;
     const gap = 1;
     const actualBarWidth = Math.max(1, barWidth - gap);
 
-    // DRAW BARS
     for (let i = 0; i < BAR_COUNT; i++) {
-        // FREQUENCY RANGE
         const start = Math.floor(i * (bufferLength * FREQUENCY_RANGE) / BAR_COUNT);
-
         const end = Math.floor((i + 1) * (bufferLength * FREQUENCY_RANGE) / BAR_COUNT);
-
-        // MAX FREQUENCY VALUE
         let value = 0;
 
         for (let j = start; j < end; j++) {
             value = Math.max(value, dataArray[j]);
         }
 
-        // NORMALIZE
         let normalized = value / 255;
 
-        // VISUAL COMPRESSION
         normalized = Math.pow(normalized, 1.5);
 
-        // HIGH FREQUENCY BOOST
         const position = i / (BAR_COUNT - 1);
         const highFrequencyBoost = 1 + position * 0.2;
 
         normalized *= highFrequencyBoost;
         normalized = Math.min(normalized, 1);
 
-        // TARGET HEIGHT
         let targetHeight = normalized * height;
         targetHeight = Math.max(MIN_HEIGHT, targetHeight);
 
-        // FPS-INDEPENDENT SMOOTHING
         const riseSpeed = 0.025;
         const fallSpeed = 0.08;
 
@@ -85,11 +80,9 @@ function drawSpectrum() {
 
         smoothedBars[i] += (targetHeight - smoothedBars[i]) * smoothing;
 
-        // POSITION
         const x = i * barWidth;
         const y = height - smoothedBars[i];
 
-        // GRADIENT
         const gradient = ctx.createLinearGradient(0, height, 0, 0);
 
         gradient.addColorStop(0.00, "#32c1d7");
@@ -114,15 +107,36 @@ function drawSpectrum() {
         gradient.addColorStop(0.95, "#d62a8e");
         gradient.addColorStop(1.00, "#e01f83");
 
-        // DRAW
         ctx.fillStyle = gradient;
         ctx.shadowBlur = 8;
         ctx.shadowColor = "#00000000";
 
-        ctx.fillRect(x, y, actualBarWidth, smoothedBars[i]);
+        ctx.fillRect(
+            x,
+            y,
+            actualBarWidth,
+            smoothedBars[i]
+        );
     }
 
     ctx.shadowBlur = 0;
 }
 
+disableCanvas.addEventListener("change", () => {
+    if (disableCanvas.checked) {
+        spectrumEnabled = false; // STOP ANIMATION
+        if (animationId !== null) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+        ctx.clearRect(0,0,canvas.width,canvas.height); // CLEAR CANVAS
+    } else {
+        spectrumEnabled = true;
+        lastTime = performance.now();
+        drawSpectrum();
+    }
+});
+
+spectrumEnabled = true;
+lastTime = performance.now();
 drawSpectrum();

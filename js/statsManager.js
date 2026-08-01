@@ -67,8 +67,8 @@ async function getIcecastStats() {
     // Artist, Title & Album !!!
     const songData = data.icestats.source.metadata.x_icy_title;
 
-    const [artist, titleAlbum] = songData.split(" - ");
-    const [title, album] = titleAlbum.split(" | ");
+    let [artist, titleAlbum] = songData.split(" - ");
+    let [title, album] = titleAlbum.split(" | ");
 
     songNameDisplay.textContent = title;
     artistNameDisplay.textContent = artist;

@@ -30,12 +30,12 @@
                     <h2 class="red">▶ NOW PLAYING...</h2>
                 </div>
                 <div class="now-play-img"></div>
-                <h2 id="song-name">Remember Summer Days</h2>
-                <h4 id="artist-name">Anri</h4>
+                <h2 id="song-name">--:--</h2>
+                <h5 id="artist-name">--:--</h5>
             </div>
 
             <div style="padding: 9px;" class="square3">
-                <p style="font-size: 12px;"><b>UP NEXT:</b> <span class="red">Midnight Pretenders</span></p>
+                <p style="font-size: 12px;"><b>UP NEXT:</b> <span class="red">--:--</span></p>
             </div>
 
             <div style="margin-top: 8px;" class="volume-control">
@@ -98,9 +98,10 @@
                 </div>
                 <div class="stats-panel" style="font-size: clamp(8px, 11px, 14px);">
                     <div>
-                    <p>STATUS: CONNECTED</p>
-                    <p>UPTIME: 02:00:42</p>
-                    <p>BITRATE: 320kbp/s</p><br>
+                    <p id="status-display">STATUS: CONNECTING...</p>
+                    <p id="ping-display">PING: --:--</p>
+                    <p id="uptime-display">UPTIME: --:--</p>
+                    <p id="bitrate-display">BITRATE: --:--</p><br>
                     </div>
                     <div>
                     <p id="credits">Made with ❤️ and lots of ☕ by Grillo.</p>
@@ -124,6 +125,7 @@
     ></audio>
 
     <script src="js/volumeManager.js"></script>
+    <script src="js/statsManager.js"></script>
     <script src="js/playPauseManager.js"></script>
     <script src="js/scheduleController.js"></script>
     <script src="js/spectrumDrawer.js"></script>

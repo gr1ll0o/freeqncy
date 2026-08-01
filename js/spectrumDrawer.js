@@ -12,14 +12,11 @@ let lastTime = performance.now();
 function resizeCanvas() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-    const width = canvas.clientWidth;
+    const width = canvas.parentElement.clientWidth;
     const height = canvas.clientHeight;
 
     canvas.width = width * dpr;
     canvas.height = height * dpr;
-
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }

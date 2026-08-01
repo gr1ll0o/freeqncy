@@ -25,14 +25,18 @@
 
     <main>
         <section class="left-section">
-            <div class="song-info">
-                <h2>NOW PLAYING...</h2>
+            <div style="margin-bottom: -5px" class="song-info">
+                <h2>▶ NOW PLAYING...</h2>
                 <div class="now-play-img"></div>
                 <h2 id="song-name">Remember Summer Days</h2>
                 <h4 id="artist-name">Anri</h4>
             </div>
 
-            <div class="volume-control">
+            <div style="padding: 9px;" class="square3">
+                <p style="font-size: 12px;"><b>UP NEXT:</b> <span class="red">Midnight Pretenders</span></p>
+            </div>
+
+            <div style="margin-top: 8px;" class="volume-control">
                 <h2>VOLUME</h2>
                 <div id="volume-knob" class="knob">
                     <svg viewBox="0 0 220 220">
@@ -59,10 +63,10 @@
 
         <section class="right-section">
             <div class="square3">
-                <h2 style="margin-bottom: 8px;">SCHEDULE</h2>
-                    <div class="schedule">
+                <h2 style="margin-top: -6px;margin-bottom: 2px;font-size: clamp(14px, 2vh, 22px)">SCHEDULE</h2>
+                    <div style="margin-bottom: -8px;" class="schedule">
                         <div id="mornin-waves-hour">
-                            <h3>00:06 - 12:00</h3>
+                            <h3>06:00 - 12:00</h3>
                             <h2>MORNIN' WAVES</h2>
                         </div>
                         <div id="afternoon-grooves-hour">
@@ -74,7 +78,7 @@
                             <h2>NIGHT RIDE</h2>
                         </div>
                         <div id="midnight-city-hour">
-                            <h3>00:00 - 00:06</h3>
+                            <h3>00:00 - 06:00</h3>
                             <h2>MIDNIGHT CITY</h2>
                         </div>
                     </div>
@@ -82,17 +86,7 @@
             
             <div class="volume-control">
                 <h2>VOLUME</h2>
-                <div id="volume-knob" class="knob">
-                    <svg viewBox="0 0 220 220">
-                        <g id="ticks"></g>
-                        <circle class="ring" cx="110" cy="110" r="66" />
-                        <line id="needle" x1="110" y1="110" x2="110" y2="66" />
-                        <circle class="center-dot" cx="110" cy="110" r="7" />
-                    </svg>
-            
-                    <span class="min">MIN</span>
-                    <span class="max">MAX</span>
-                </div>
+                
             </div>
         </section>
     </main>

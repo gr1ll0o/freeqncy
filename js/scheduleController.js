@@ -33,12 +33,14 @@ function updateSchedule() {
         schedule.querySelectorAll('h2, h3').forEach(element => {
             element.style.color = '#32c1d7';
             element.style.fontWeight = 'bold';
+            element.style.fontSize = 'clamp(6px, 14px, 16px)';
         });
     });
     hours[activeHour].querySelectorAll('h2, h3').forEach(element => {
         element.style.color = '#e01f83';
         element.style.fontWeight = '900';
+        element.style.fontSize = 'clamp(8px, 16px, 18px)';
     });
 }
 
-setInterval(updateSchedule, 1000);
+setInterval(updateSchedule, 10);

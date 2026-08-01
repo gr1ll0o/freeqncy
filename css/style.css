@@ -212,6 +212,15 @@ main>section:first-child {
     font-size: clamp(12px, 1.6vh, 16px);
 }
 
+#song-name {
+    margin-top: 8px;
+    margin-bottom: -1px;
+}
+
+#artist-name {
+    margin-top: 0;
+}
+
 .now-play-img {
     margin: 10px auto 0;
     width: clamp(120px, 22vh, 250px);
@@ -371,7 +380,7 @@ main>section:first-child>.square3 {
 }
 
 main>section:first-child>.volume-control {
-    flex: 1 1 0;
+    flex: 1 0 0;
     min-height: 0;
     display: flex;
     flex-direction: column;
@@ -571,21 +580,16 @@ main>section:last-child>.social-media {
         width: clamp(80px, 15vh, 180px);
     }
 
-    main>section:first-child .knob {
-        flex: 0 0 auto;
-    }
-
-    main>section:last-child .schedule {
-        flex: 0 0 auto;
-    }
-
+    main>section:first-child .knob,
+    main>section:last-child .schedule,
     main>section:last-child .schedule>div {
         flex: 0 0 auto;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     body {
+        margin: 8px;
         height: auto;
         min-height: calc(100vh - 30px);
     }
@@ -601,24 +605,11 @@ main>section:last-child>.social-media {
         min-height: 500px;
     }
 
-    #logo {
-        height: clamp(80px, 100px, 120px);
-    }
-
-    #center-img {
-        height: clamp(60px, 150px, 200px);
-    }
-
     main>section:nth-child(2) {
         min-height: 500px;
     }
-}
 
-@media (max-width: 600px) {
-    body {
-        margin: 8px;
-    }
-
+    /* ---------- Header ---------- */
     header {
         height: auto;
         min-height: 0;
@@ -637,17 +628,30 @@ main>section:last-child>.social-media {
         margin: 0;
     }
 
-    header img {
-        height: clamp(50px, 12vw, 75px);
-        width: auto;
-    }
-
     header>div:nth-child(2) {
         grid-column: 1;
         grid-row: 2;
         justify-self: stretch;
         min-width: 0;
         max-width: 100%;
+    }
+
+    header>div:last-child {
+        grid-column: 1;
+        grid-row: 3;
+        justify-self: center;
+        min-width: 0;
+    }
+
+    header img {
+        height: clamp(50px, 12vw, 75px);
+        width: auto;
+    }
+
+    header li {
+        margin: 0;
+        font-size: clamp(12px, 3.5vw, 18px);
+        white-space: nowrap;
     }
 
     .header-a {
@@ -659,19 +663,6 @@ main>section:last-child>.social-media {
         padding: 0;
         margin: 0;
         list-style: none;
-    }
-
-    header li {
-        margin: 0;
-        font-size: clamp(12px, 3.5vw, 18px);
-        white-space: nowrap;
-    }
-
-    header>div:last-child {
-        grid-column: 1;
-        grid-row: 3;
-        justify-self: center;
-        min-width: 0;
     }
 
     .onair-stats {
@@ -688,5 +679,64 @@ main>section:last-child>.social-media {
 
     #listeners-display {
         font-size: clamp(8px, 2.2vw, 11px);
+    }
+
+    /* ---------- Center ---------- */
+    #logo {
+        height: clamp(80px, 100px, 120px);
+    }
+
+    #center-img {
+        height: clamp(60px, 150px, 200px);
+    }
+
+    /* ---------- Song Info ---------- */
+    .song-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .song-info>div:nth-child(2) {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .song-info>div:nth-child(2)>#cover-display {
+        width: 100px !important;
+        height: 100px !important;
+        min-width: 100px;
+        flex-shrink: 0;
+        margin: 0 !important;
+    }
+
+    .song-info>div:nth-child(2)>div:last-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        flex: 1;
+    }
+
+    #song-name {
+        margin: 0 0 4px 0 !important;
+        font-size: 18px;
+        line-height: 1.1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #artist-name {
+        margin: 0 !important;
+        font-size: 13px;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

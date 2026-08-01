@@ -114,9 +114,23 @@ header li {
 .onair-stats {
     margin: 20px;
     padding: 10px;
-    padding-right: 40px;
+    padding-right: 2.5rem;
     border: 2px solid #e01f83;
     border-radius: 16px;
+}
+
+.onair-stats p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#state-display {
+    font-size: clamp(11px, 1.2vw, 18px);
+}
+
+#listeners-display {
+    font-size: clamp(8px, 0.8vw, 12px);
 }
 
 main {

@@ -552,7 +552,7 @@ main>section:last-child>.social-media {
     cursor: pointer;
 }
 
-@media (max-height: 600px) {
+@media (max-height: 300px) {
 
     body {
         height: auto;

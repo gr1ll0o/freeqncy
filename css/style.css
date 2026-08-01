@@ -17,7 +17,6 @@ body::before {
     background: url("../assets/imgs/bg/body-background.png") center/cover no-repeat;
     filter:grayscale(0.47) blur(0.5px);
     transform: scale(1.03);
-    /* evita bordes transparentes por el blur */
     z-index: -1;
 }
 
@@ -149,7 +148,8 @@ main>section:first-child {
 }
 
 .song-info h2,
-.volume-control h2 {
+.volume-control h2,
+.square3 h2 {
     font-size: clamp(14px, 2vh, 22px);
 }
 
@@ -302,4 +302,72 @@ main>section:nth-child(2) {
 /* Right Aside */
 main>section:last-child {
     justify-self: end;
+}
+
+.square {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 0;
+
+    border: 1.5px solid #32163f;
+    border-radius: 12px;
+}
+
+.square2 {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 0;
+
+    border: 1.5px solid #32163f;
+    border-radius: 12px;
+}
+
+.square3 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 0;
+
+    border: 1.5px solid #32163f;
+    border-radius: 12px;
+}
+
+.schedule-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.schedule>div {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1.5px solid #0f0841;
+    border-left: 0;
+    border-right: 0;
+    padding: 6px 15px 6px 15px;
+}
+
+.schedule {
+    width: 100%;
+    text-align: start;
+    border: 1.5px solid #0f0841;
+    border-radius: 12px;
+}
+
+#mornin-waves-hour {
+    border-top: 0;
+}
+
+#midnight-city-hour {
+    border-bottom: 0;
 }

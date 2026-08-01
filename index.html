@@ -36,13 +36,9 @@
                 <h2>VOLUME</h2>
                 <div id="volume-knob" class="knob">
                     <svg viewBox="0 0 220 220">
-                        <!-- rayitas -->
                         <g id="ticks"></g>
-                        <!-- aro -->
                         <circle class="ring" cx="110" cy="110" r="66" />
-                        <!-- aguja -->
                         <line id="needle" x1="110" y1="110" x2="110" y2="66" />
-                        <!-- centro -->
                         <circle class="center-dot" cx="110" cy="110" r="7" />
                     </svg>
 
@@ -62,7 +58,42 @@
         </section>
 
         <section class="right-section">
-
+            <div class="square3">
+                <h2 style="margin-bottom: 8px;">SCHEDULE</h2>
+                    <div class="schedule">
+                        <div id="mornin-waves-hour">
+                            <h3>00:06 - 12:00</h3>
+                            <h2>MORNIN' WAVES</h2>
+                        </div>
+                        <div id="afternoon-grooves-hour">
+                            <h3>12:00 - 18:00</h3>
+                            <h2>AFTERNOON GROOVES</h2>
+                        </div>
+                        <div id="night-ride-hour">
+                            <h3>18:00 - 00:00</h3>
+                            <h2>NIGHT RIDE</h2>
+                        </div>
+                        <div id="midnight-city-hour">
+                            <h3>00:00 - 00:06</h3>
+                            <h2>MIDNIGHT CITY</h2>
+                        </div>
+                    </div>
+            </div>
+            
+            <div class="volume-control">
+                <h2>VOLUME</h2>
+                <div id="volume-knob" class="knob">
+                    <svg viewBox="0 0 220 220">
+                        <g id="ticks"></g>
+                        <circle class="ring" cx="110" cy="110" r="66" />
+                        <line id="needle" x1="110" y1="110" x2="110" y2="66" />
+                        <circle class="center-dot" cx="110" cy="110" r="7" />
+                    </svg>
+            
+                    <span class="min">MIN</span>
+                    <span class="max">MAX</span>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -75,6 +106,7 @@
 
     <script src="js/volumeManager.js"></script>
     <script src="js/playPauseManager.js"></script>
+    <script src="js/scheduleController.js"></script>
     <script>document.querySelector(".background-video").playbackRate = 1.25;</script>
 </body>
 </html>

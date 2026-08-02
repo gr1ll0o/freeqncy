@@ -1,5 +1,3 @@
-<div align="center">
-
 ![FREEQNCY](/assets/imgs/png-logo.png)
 
 ### *A self-hosted real-time internet radio platform.*
@@ -13,8 +11,6 @@
 ---
 
 *A modern, self-hosted internet radio built around a real-time audio streaming pipeline.*
-
-</div>
 
 ---
 

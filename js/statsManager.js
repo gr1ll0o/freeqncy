@@ -10,7 +10,7 @@ const pingDisplay = document.getElementById('ping-display');
 const bitRateDisplay = document.getElementById('bitrate-display');
 const upTimeDisplay = document.getElementById('uptime-display');
 
-const ICECAST_URL = "https://avon-asking-catalog-secondary.trycloudflare.com";
+const ICECAST_URL = "https://score-preview-prayer-plumbing.trycloudflare.com";
 
 async function getPing() {
     const start = performance.now();

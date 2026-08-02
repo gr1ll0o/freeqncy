@@ -16,8 +16,7 @@
     <meta property="og:image" content="https://freeqncy.netlify.app/assets/imgs/logo-prom.jpg">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="315">
-    
-    <!-- Twitter / X -->
+
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="FREEQNCY — 24/7 Best Vibes Radio">
     <meta name="twitter:description" content="Tune in to FREEQNCY — 24/7 Best Vibes Radio.">
@@ -28,9 +27,9 @@
         <div><img id="logo" src="assets/imgs/logo-header.png" alt="FREEQNCY" title="FREEQNCY"></div>
         <div>
             <ul class="header-a">
-                <li><a href=""><p>HOME</p></a></li>
-                <li><a href=""><p>ABOUT</p></a></li>
-                <li><a href=""><p>SUGGESTIONS</p></a></li>
+                <li id="home-selector" onclick="switchPage(0)"><p>HOME</p></li>
+                <li id="about-selector" onclick="switchPage(1)"><p>ABOUT</p></a></li>
+                <li onclick=""><p>SUGGESTIONS</p></a></li>
             </ul>
         </div>
         <div class="onair-stats">
@@ -39,7 +38,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section class="left-section">
             <div style="margin-bottom: -5px" class="song-info">
                 <div class="panel-title">
@@ -73,10 +72,12 @@
                     <span class="min">MIN</span>
                     <span class="max">MAX</span>
                 </div>
-                <div style="display: flex;gap:0.5em;font-size: 12px;">
-                <input type="checkbox" name="disable-eq" id="disable-eq">Disable the EQ effect
+                <div style="height: 100%;display: flex;flex-direction: column;justify-content: center;">
+                    <div style="display: flex;gap:0.5em;font-size: 12px;">
+                    <input type="checkbox" name="disable-eq" id="disable-eq">Disable the EQ effect
+                    </div>
+                    <input type="button" id="refresh-stream" value="Refresh Stream">
                 </div>
-                <input type="button" id="refresh-stream" value="Refresh Stream">
             </div>
         </section>
 
@@ -142,6 +143,28 @@
         </section>
     </main>
 
+    <div class="about" id="about">
+        <section class="about-section">
+            <img src="assets/imgs/logo-header.png" height="200px"><br>
+            <p>
+                Welcome to FREEQNCY, a 24/7 internet radio station with nothing but the best vibes! Across the shows we offer (see the
+                SCHEDULE section), we'll set the mood for your day with the following genres:
+            </p>
+            <div class="genres-container">
+                <div>Synth-Pop</div>
+                <div>Fusion Jazz</div>
+                <div>Alt Rock</div>
+                <div>Acid Jazz</div>
+                <div>New Wave</div>
+                <div>Funk</div>
+                <div>80s Music</div>
+                <div>City Pop</div>
+                <div>Soft Rock</div>
+                <div>Trip Hop</div>
+            </div>
+        </section>
+    </div>
+
     <audio 
         id="player" 
         src="https://score-preview-prayer-plumbing.trycloudflare.com" 
@@ -149,6 +172,7 @@
         autoplay
     ></audio>
 
+    <script src="js/switchPageScr.js"></script>
     <script src="js/volumeManager.js"></script>
     <script src="js/statsManager.js"></script>
     <script src="js/playPauseManager.js"></script>

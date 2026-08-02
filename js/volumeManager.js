@@ -68,7 +68,7 @@ function setVolume(v) {
     });
 }
 
-setVolume(.5);
+setVolume(.7);
 
 let dragging = false;
 knob.addEventListener("pointerdown", async (e) => {

@@ -321,6 +321,29 @@ main>section:first-child {
     right: 28px;
 }
 
+#refresh-stream {
+    margin-top: 5px;
+    cursor: pointer;
+    background: none;
+    border: 2.3px solid #32163f;
+    border-radius: 50px;
+    transition: all ease 0.35s;
+}
+
+#refresh-stream:hover {
+    border: 2.3px solid #502364;
+    color: #e01f83;
+}
+
+#refresh-stream:active {
+    font-size: 11px;
+}
+
+#refresh-stream:disabled {
+    color: #666;
+    border: 2.3px solid 666;
+}
+
 /* Main */
 main>section:nth-child(2) {
     justify-self: center;

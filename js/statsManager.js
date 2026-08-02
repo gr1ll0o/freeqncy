@@ -10,13 +10,13 @@ const pingDisplay = document.getElementById('ping-display');
 const bitRateDisplay = document.getElementById('bitrate-display');
 const upTimeDisplay = document.getElementById('uptime-display');
 
-const ICECAST_URL = "https://score-preview-prayer-plumbing.trycloudflare.com";
+const STREAM_URL = "https://score-preview-prayer-plumbing.trycloudflare.com";
 
 async function getPing() {
     const start = performance.now();
 
     try {
-        const res = await fetch(`${ICECAST_URL}/status-json.xsl`, {
+        const res = await fetch(`${STREAM_URL}/status-json.xsl`, {
             cache: "no-store"
         });
 
@@ -42,7 +42,7 @@ async function getIcecastStats() {
     let data;
 
     try {
-        const res = await fetch(`${ICECAST_URL}/status-json.xsl`);
+        const res = await fetch(`${STREAM_URL}/status-json.xsl`);
 
         if (!res.ok) {
             throw new Error(`HTTP Error: ${res.status}`);
@@ -55,6 +55,8 @@ async function getIcecastStats() {
             statusDisplay.textContent = "STATUS: OFFLINE";
             throw new Error("FREEQNCY mount is offline");
         }
+        stateDisplay.textContent = "𒊹 ON AIR"
+        stateDisplay.style.color = "#e01f83"
     } catch (error) {
         console.error(error);
         return;

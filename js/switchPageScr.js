@@ -5,20 +5,25 @@ const homeSelector = document.getElementById('home-selector');
 const aboutSelector = document.getElementById('about-selector');
 
 function switchPage(i) {
+    homeSelector.classList.remove('active');
+    aboutSelector.classList.remove('active');
     switch (i) {
+
         case 0:
             home.style.display = 'grid';
             about.style.display = 'none';
-
-            homeSelector.style.color = '#e01f83';
-            aboutSelector.style.color = '#32c1d7';
+            home.classList.remove('page-animation');
+            void home.offsetWidth;
+            home.classList.add('page-animation');
+            homeSelector.classList.add('active');
         break;
         case 1:
             home.style.display = 'none';
             about.style.display = 'grid';
-            
-            homeSelector.style.color = '#32c1d7';
-            aboutSelector.style.color = '#e01f83';
+            about.classList.remove('page-animation');
+            void about.offsetWidth;
+            about.classList.add('page-animation');
+            aboutSelector.classList.add('active');
         break;
     }
 }

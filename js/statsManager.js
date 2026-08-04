@@ -10,7 +10,7 @@ const pingDisplay = document.getElementById('ping-display');
 const bitRateDisplay = document.getElementById('bitrate-display');
 const upTimeDisplay = document.getElementById('uptime-display');
 
-const STREAM_URL = "https://observe-dairy-thinkpad-anytime.trycloudflare.com";
+const STREAM_URL = "https://giant-favourites-smaller-telecom.trycloudflare.com";
 
 async function getPing() {
     const start = performance.now();

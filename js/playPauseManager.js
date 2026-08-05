@@ -1,3 +1,7 @@
+/*  ONLY THE URL  */
+const STREAM_URL = "https://ceiling-customized-innovations-yellow.trycloudflare.com";
+/*  ONLY THE URL  */
+
 const playBtn = document.getElementById("playBtn");
 const refreshStream = document.getElementById("refresh-stream");
 
@@ -38,7 +42,7 @@ function resetStream() {
 
     player.pause();
     player.removeAttribute("src");
-    player.src = `${STREAM_URL}?_=${Date.now()}`;
+    player.src = `${STREAM_URL}/FREEQNCY?_=${Date.now()}`;
     player.load();
 }
 

@@ -10,8 +10,6 @@ const pingDisplay = document.getElementById('ping-display');
 const bitRateDisplay = document.getElementById('bitrate-display');
 const upTimeDisplay = document.getElementById('uptime-display');
 
-const STREAM_URL = "https://giant-favourites-smaller-telecom.trycloudflare.com";
-
 async function getPing() {
     const start = performance.now();
 
@@ -67,22 +65,26 @@ async function getIcecastStats() {
     listenersDisplay.textContent = "listeners: " + listeners;
 
     // Artist, Title & Album !!!
-    const songData = data.icestats.source.metadata.x_icy_title;
+    const songData = data.icestats.source.title;
 
-    let [artist, titleAlbum] = songData.split(" - ");
-    let [title, album] = titleAlbum.split(" | ");
+    try {
+        let [artist, titleAlbum] = songData.split(" - ");
+        let [title, album] = titleAlbum.split(" | ");
+        
+        songNameDisplay.textContent = title;
+        artistNameDisplay.textContent = artist;
 
-    songNameDisplay.textContent = title;
-    artistNameDisplay.textContent = artist;
+        const coverName = album
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, "-");
 
-    const coverName = album
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-");
-
-    const coverPath = `assets/covers/${coverName}.jpg`;
-    
-    coverAlbumDisplay.innerHTML = `<img src="${coverPath}">`
+        const coverPath = `assets/covers/${coverName}.jpg`;
+        
+        coverAlbumDisplay.innerHTML = `<img src="${coverPath}">`
+    }catch (error) {
+        console.log("Loading new song data...")
+    }
 
     // Status !!! //
     statusDisplay.textContent = "STATUS: ONLINE";

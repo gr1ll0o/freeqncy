@@ -1,3 +1,4 @@
+<center>
 ![FREEQNCY](/assets/imgs/png-logo.png)
 
 ### *A self-hosted real-time internet radio platform.*
@@ -13,7 +14,7 @@
 *A modern, self-hosted internet radio built around a real-time audio streaming pipeline.*
 
 ---
-
+</center>
 # ✨ Overview
 
 FREEQNCY is an *internet radio platform* that continuously broadcasts music in real time.
@@ -73,7 +74,7 @@ As an avid music lover, the station will broadcast songs that match my musical t
          ▼                     ▼
       Web Player            VLC / Apps
 ```
-
+-->
 ---
 
 # 🛠️ Tech Stack

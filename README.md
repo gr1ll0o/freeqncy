@@ -82,7 +82,7 @@ As an avid music lover, the station will broadcast songs that match my musical t
 
 # 🛠️ Tech Stack
 
-### Infrastructure
+### Infrastructure / Backend
 
 ![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=archlinux&logoColor=white)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
@@ -150,7 +150,17 @@ Contributions, suggestions and feedback are always welcome. I'm always learning 
 
 # 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the Apache License 2.0.
+
+---
+
+# 📄 Third-Party Assets
+
+Third-party libraries, fonts, icons, images, and other assets included in this
+repository may be subject to their own licenses.
+
+Their respective licenses remain applicable and are not superseded by the
+licenses described above.
 
 ---
 

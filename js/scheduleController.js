@@ -5,6 +5,15 @@ const hours = [
     document.getElementById('midnight-city-hour')
 ];
 
+const titles =["MORNIN' WAVES", "AFTERNOON GROOVES", "NIGHT RIDE", "MIDNIGHT CITY"];
+
+const headers = [
+    document.getElementById('mornin-waves-h'),
+    document.getElementById('afternoon-grooves-h'),
+    document.getElementById('night-ride-h'),
+    document.getElementById('midnight-city-h'),
+]
+
 function updateSchedule() {
     const now = new Date();
     const hour = now.getHours();
@@ -41,6 +50,12 @@ function updateSchedule() {
         element.style.fontWeight = '900';
         element.style.fontSize = 'clamp(8px, 16px, 18px)';
     });
+
+    headers.forEach((element, i) => {
+        element.textContent = titles[i];
+    });
+
+    headers[activeHour].textContent = "▶ " + titles[activeHour];
 }
 
 setInterval(updateSchedule, 10);

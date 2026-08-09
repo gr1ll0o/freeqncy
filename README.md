@@ -130,8 +130,8 @@ FREEQNCY
 - [X] Album artwork
 - [X] Listener counter
 - [X] Mobile support
-- [ ] Better Player
-- [ ] Status Recognition
+- [X] Better Player
+- [X] Status Recognition
 - [ ] Documentation
 
 ---

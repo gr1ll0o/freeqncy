@@ -1,5 +1,5 @@
 /*  ONLY THE URL  */
-const STREAM_URL = "https://move-welfare-they-tabs.trycloudflare.com";
+const STREAM_URL = "https://dan-dragon-provincial-stake.trycloudflare.com";
 /*  ONLY THE URL  */
 
 const playBtn = document.getElementById("playBtn");

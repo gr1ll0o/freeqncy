@@ -8,16 +8,22 @@
 body {
     margin: 15px;
     height: calc(100vh - 30px);
+    background-color: #000;
 }
 
 body::before {
     content: "";
     position: fixed;
-    inset: 0;
-    background: url("../assets/imgs/bg/body-background.png") center/cover no-repeat;
-    filter:grayscale(0.47) blur(0.5px);
-    transform: scale(1.03);
+    inset: -2%;
+    width: 104%;
+    height: 104%;
+
+    background: url("../assets/imgs/bg/body-background.png") center center / cover no-repeat;
+
+    filter: grayscale(0.47) blur(0.5px);
+
     z-index: -1;
+    pointer-events: none;
 }
 
 .about {

@@ -1,5 +1,5 @@
 /*  ONLY THE URL  */
-const STREAM_URL = "https://installations-selective-mother-glory.trycloudflare.com";
+const STREAM_URL = "https://move-welfare-they-tabs.trycloudflare.com";
 /*  ONLY THE URL  */
 
 const playBtn = document.getElementById("playBtn");

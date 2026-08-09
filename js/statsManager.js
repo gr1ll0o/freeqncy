@@ -22,6 +22,7 @@ async function getPing() {
 
         if (!res.ok) {
             throw new Error("HTTP Error");
+            refreshStream();
         }
 
         const ping = Math.round(end - start);
@@ -31,7 +32,8 @@ async function getPing() {
         stateDisplay.textContent = "𒊹 NO SIGNAL"
         stateDisplay.style.color = "#666";
         statusDisplay.textContent = "STATUS: OFFLINE";
-        throw new Error("The ping could not be measured.");
+        throw new Error("The ping could not be measured. Retrying...");
+        refreshStream();
     }
 }
 
@@ -111,4 +113,4 @@ async function getIcecastStats() {
 }
 
 setInterval(getIcecastStats, 1000);
-setInterval(getPing, 5000);
+setInterval(getPing, 3000);

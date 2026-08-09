@@ -15,7 +15,9 @@
 *A modern, self-hosted internet radio built around a real-time audio streaming pipeline.*
 
 ---
+
 </center>
+
 # ✨ Overview
 
 FREEQNCY is an *internet radio platform* that continuously broadcasts music in real time.

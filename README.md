@@ -1,4 +1,4 @@
-<center>
+<div align="center">
 
 ![FREEQNCY](/assets/imgs/png-logo.png)
 
@@ -16,7 +16,7 @@
 
 ---
 
-</center>
+</div>
 
 # ✨ Overview
 

@@ -36,7 +36,7 @@ As an avid music lover, the station will broadcast songs that match my musical t
 # 📸 Preview
 
 
-<p align="center"><img width="800" src="./assets/imgs/preview1.png"></p>
+<div align="center"><img width="800" src="./assets/imgs/preview1.png"></div>
 
 ---
 
@@ -82,11 +82,10 @@ As an avid music lover, the station will broadcast songs that match my musical t
 
 # 🛠️ Tech Stack
 
-### Backend
+### Infrastructure
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express)
-![REST API](https://img.shields.io/badge/REST_API-blue?style=flat-square)
+![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=archlinux&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 
 ### Streaming
 
@@ -97,7 +96,7 @@ As an avid music lover, the station will broadcast songs that match my musical t
 ### Frontend
 
 ![HTML5](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 ---

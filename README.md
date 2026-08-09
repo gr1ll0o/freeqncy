@@ -29,17 +29,12 @@ As an avid music lover, the station will broadcast songs that match my musical t
 
 ---
 
-<!--
 # 📸 Preview
 
-> Screenshots will be added as the project evolves.
 
-<p align="center">
-<img width="800" src="./assets/preview.png">
-</p>
+<p align="center"><img width="800" src="./assets/imgs/preview1.png"></p>
 
 ---
--->
 
 # 🚀 Features
 

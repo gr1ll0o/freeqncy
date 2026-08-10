@@ -1,5 +1,5 @@
 /*  ONLY THE URL  */
-const STREAM_URL = "https://dan-dragon-provincial-stake.trycloudflare.com";
+const STREAM_URL = "https://pressing-hoping-generator-bacteria.trycloudflare.com";
 /*  ONLY THE URL  */
 
 const playBtn = document.getElementById("playBtn");

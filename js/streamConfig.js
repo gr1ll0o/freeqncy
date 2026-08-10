@@ -1,1 +1,1 @@
-const STREAM_URL = "https://changelog-dense-aug-max.trycloudflare.com";
+const STREAM_URL = "https://scripts-sender-transformation-contents.trycloudflare.com";

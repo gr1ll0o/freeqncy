@@ -1,1 +1,1 @@
-const STREAM_URL = "https://mixer-honors-long-position.trycloudflare.com";
+const STREAM_URL = "https://univ-gaming-mailto-kijiji.trycloudflare.com";

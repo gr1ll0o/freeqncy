@@ -1,1 +1,1 @@
-const STREAM_URL = "https://pressing-hoping-generator-bacteria.trycloudflare.com";
+const STREAM_URL = "https://changelog-dense-aug-max.trycloudflare.com";

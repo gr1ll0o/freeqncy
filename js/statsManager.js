@@ -8,6 +8,7 @@ const stateDisplay = document.getElementById('state-display'); // Header
 const statusDisplay = document.getElementById('status-display'); // Stream stats
 const pingDisplay = document.getElementById('ping-display'); 
 const bitRateDisplay = document.getElementById('bitrate-display');
+const peakDisplay = document.getElementById('peak-display');
 const upTimeDisplay = document.getElementById('uptime-display');
 
 async function getPing() {
@@ -65,6 +66,8 @@ async function getIcecastStats() {
     // Listeners !!! //
     let listeners = data.icestats.source.listeners;
     listenersDisplay.textContent = "listeners: " + listeners;
+    let peak = data.icestats.source.listener_peak;
+    peakDisplay.textContent = "PEAK USERS: " + peak;
 
     // Artist, Title & Album !!!
     const songData = data.icestats.source.title;

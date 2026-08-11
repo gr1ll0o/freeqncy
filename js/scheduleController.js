@@ -1,3 +1,12 @@
+let activeHour;
+const spotifyBtn = document.getElementById('spotify-btn');
+const playlists = [
+    "https://open.spotify.com/playlist/1X0k13NYkJcah2LN51axl2?si=a9c57662e0b9481c",
+    "https://open.spotify.com/playlist/01NrNjaREHhMkiVDEU7HKO?si=9e5d8d8218064d28",
+    "https://open.spotify.com/playlist/6oDkcyxhnyzcBda6NVGz4z?si=6bf29305b6f24e00",
+    "https://open.spotify.com/playlist/6luHHyTMz0vvM0uImh7UCd?si=c81725d89517450b"
+];
+
 const hours = [
     document.getElementById('mornin-waves-hour'),
     document.getElementById('afternoon-grooves-hour'),
@@ -19,7 +28,6 @@ function updateSchedule() {
     const hour = now.getHours();
     const minutes = now.getMinutes();
     const currentMinutes = hour * 60 + minutes;
-    let activeHour;
 
     // MORNIN' WAVES: 06:00 - 12:00
     if (currentMinutes >= 360 && currentMinutes < 720) {
@@ -58,4 +66,9 @@ function updateSchedule() {
     headers[activeHour].textContent = "▶ " + titles[activeHour];
 }
 
+spotifyBtn.addEventListener('click', () => {
+    window.open(playlists[activeHour])
+});
+
+updateSchedule();
 setInterval(updateSchedule, 10);

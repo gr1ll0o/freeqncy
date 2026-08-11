@@ -652,6 +652,12 @@ main>section:last-child>.social-media {
     animation: pageFadeIn 0.25s ease;
 }
 
+.fa-brands { transition: all ease 0.3s;cursor:pointer; }
+
+.fa-brands:hover {
+    color: #b2e2ea;
+}
+
 @media (max-height: 300px) {
 
     body {

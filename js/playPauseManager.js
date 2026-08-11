@@ -15,12 +15,16 @@ function updatePlayButton() {
     }
 }
 
-playBtn.addEventListener("click", () => {
+function playPause() {
     if (player.paused) {
         player.play();
     } else {
         player.pause();
     }
+}
+
+playBtn.addEventListener("click", () => {
+    playPause();
 });
 
 player.addEventListener("play", updatePlayButton);
@@ -46,7 +50,13 @@ refreshStream.addEventListener("click", resetStream);
 
 player.addEventListener("playing", () => {
     refreshStream.disabled = false;
-    refreshStream.value = "Refresh Stream"
+    refreshStream.value = "Refresh Stream (R)"
+});
+
+document.addEventListener('keydown', (event) => {
+    console.log(event.key)
+    if (event.key == " " || event.key == "p") playPause();
+    if (event.key.toLowerCase() == 'r') resetStream();
 });
 
 window.addEventListener("DOMContentLoaded", () => {

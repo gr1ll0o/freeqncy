@@ -46,12 +46,18 @@ for (let i = 0; i < TOTAL; i++) {
 
 const tickList = [...ticks.children];
 
+let volume = 0.7;
+let mute = false;
+
 function setVolume(v) {
     v = Math.max(0, Math.min(1, v));
 
+    volume = v;
+
     const perceivedVolume = Math.pow(v, 2);
 
-    gainNode.gain.value = perceivedVolume * 1.5;
+    if (mute) gainNode.gain.value = 0;
+    else gainNode.gain.value = perceivedVolume * 1.5;
 
     const angle = -135 + v * 270;
 
@@ -68,7 +74,7 @@ function setVolume(v) {
     });
 }
 
-setVolume(.7);
+setVolume(.65);
 
 let dragging = false;
 knob.addEventListener("pointerdown", async (e) => {
@@ -102,8 +108,32 @@ function update(e) {
 
 }
 
+function toggleMute() {
+    mute = !mute;
+
+    if (mute) {
+        gainNode.gain.value = 0;
+        knob.style.setProperty("--knob-primary", "#666");
+        knob.style.setProperty("--knob-secondary", "#666");
+        knob.style.setProperty("--knob-glow", "#fdfdfd");
+    }else {
+        const perceivedVolume = Math.pow(volume, 2);
+        gainNode.gain.value = perceivedVolume * 1.5;
+        knob.style.setProperty("--knob-primary", "#ff2db4");
+        knob.style.setProperty("--knob-secondary", "#ff2db4");
+        knob.style.setProperty("--knob-glow", "#ff2db4");
+    }
+}
+
 knob.addEventListener("wheel", e => {
     e.preventDefault();
-    const current = Math.pow(gainNode.gain.value / 2, 1 / 2.6);
-    setVolume(current - (e.deltaY * .001));
+
+    const step = 0.0015;
+    setVolume(volume - e.deltaY * step);
 }, { passive: false });
+
+document.addEventListener('keydown', (event) => {
+    if (event.key == '+') setVolume(volume+0.05);
+    if (event.key == '-') setVolume(volume-0.05);
+    if (event.key.toLowerCase() == 'm') toggleMute();
+});

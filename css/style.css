@@ -312,6 +312,10 @@ main>section:first-child {
 }
 
 .knob {
+    --knob-primary: #ff2db4;
+    --knob-secondary: #a442ff;
+    --knob-glow: #ff2db4;
+
     width: 100%;
     display: flex;
     justify-content: center;
@@ -332,22 +336,21 @@ main>section:first-child {
 
 .ring {
     fill: none;
-    stroke: #a442ff;
+    stroke: var(--knob-secondary);
     stroke-width: 4;
-    filter: drop-shadow(0 0 10px #ff2db4);
+    filter: drop-shadow(0 0 10px var(--knob-glow));
 }
 
 .center-dot {
-    fill: #ff2db4;
-    filter: drop-shadow(0 0 8px #ff2db4);
+    fill: var(--knob-primary);
+    filter: drop-shadow(0 0 8px var(--knob-glow));
 }
 
 #needle {
-    stroke: #ff2db4;
+    stroke: var(--knob-primary);
     stroke-width: 8;
     stroke-linecap: round;
-
-    filter: drop-shadow(0 0 8px #ff2db4);
+    filter: drop-shadow(0 0 8px var(--knob-glow));
 }
 
 #ticks line {
@@ -358,9 +361,9 @@ main>section:first-child {
 }
 
 #ticks line.active {
-    stroke: #ff2db4;
+    stroke: var(--knob-primary);
     opacity: 1;
-    filter: drop-shadow(0 0 5px #ff2db4);
+    filter: drop-shadow(0 0 5px var(--knob-primary));
 }
 
 .min,

@@ -141,6 +141,12 @@ disableCanvas.addEventListener('change', () => {
 
 disableVideo.addEventListener('change', () => { if (disableVideo.checked) videoBg.style.display = 'none'; else videoBg.style.display = 'block'; });
 
+document.addEventListener('keydown', (event) => {
+    if (event.key.toLowerCase() == 'e') disableCanvas.checked = !disableCanvas.checked;disableCanvas.dispatchEvent(new Event("change"));
+    if (event.key.toLowerCase() == 'v') disableVideo.checked = !disableVideo.checked;disableVideo.dispatchEvent(new Event("change"));
+
+});
+
 spectrumEnabled = true;
 lastTime = performance.now();
 drawSpectrum();

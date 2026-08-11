@@ -98,12 +98,19 @@ async function getIcecastStats() {
     const serverStart = data.icestats.server_start;
     const startDate = new Date(serverStart);
     const now = new Date();
+
     const differenceMs = now - startDate;
     const totalSeconds = Math.floor(differenceMs / 1000);
-    const hours = Math.floor(totalSeconds / 3600);
+
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
-    const uptime = String(hours).padStart(2, "0") + ":" + String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
+
+    let uptime;
+    if (days > 0) uptime = String(days).padStart(2, "0") + ":" + String(hours).padStart(2, "0") + ":" + String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
+    else uptime = String(hours).padStart(2, "0") + ":" + String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
+
     upTimeDisplay.textContent = "UPTIME: " + uptime;
 
     // Audio Stats !!! //

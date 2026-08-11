@@ -13,11 +13,7 @@ function formatTime(seconds) {
 
 function startListeningTime() {
     if (listeningInterval !== null) return;
-
-    listeningInterval = setInterval(() => {
-        listeningSeconds++;
-        listeningTime.textContent = formatTime(listeningSeconds);
-    }, 1000);
+    listeningInterval = setInterval(() => { listeningSeconds++;listeningTime.textContent = formatTime(listeningSeconds); }, 1000);
 }
 
 startListeningTime();

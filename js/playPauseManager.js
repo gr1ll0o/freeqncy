@@ -4,28 +4,12 @@ const refreshStream = document.getElementById("refresh-stream");
 function updatePlayButton() {
     const isPlaying = !player.paused && !player.ended && player.readyState >= 3;
 
-    if (isPlaying) {
-        playBtn.innerHTML = `
-            <i id="play-control" class="fa-solid fa-circle-pause red"></i>
-        `;
-    } else {
-        playBtn.innerHTML = `
-            <i id="play-control" class="fa-solid fa-circle-play red"></i>
-        `;
-    }
+    if (isPlaying) playBtn.innerHTML = `<i id="play-control" class="fa-solid fa-circle-pause red"></i>`;
+    else playBtn.innerHTML = `<i id="play-control" class="fa-solid fa-circle-play red"></i>`;
 }
 
-function playPause() {
-    if (player.paused) {
-        player.play();
-    } else {
-        player.pause();
-    }
-}
-
-playBtn.addEventListener("click", () => {
-    playPause();
-});
+function playPause() { if (player.paused) player.play(); else player.pause(); }
+playBtn.addEventListener("click", () => { playPause(); });
 
 player.addEventListener("play", updatePlayButton);
 player.addEventListener("pause", updatePlayButton);
@@ -54,11 +38,8 @@ player.addEventListener("playing", () => {
 });
 
 document.addEventListener('keydown', (event) => {
-    console.log(event.key)
     if (event.key == " " || event.key == "p") playPause();
     if (event.key.toLowerCase() == 'r') resetStream();
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-    resetStream();
-});
+window.addEventListener("DOMContentLoaded", () => { resetStream(); });

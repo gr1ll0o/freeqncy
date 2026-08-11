@@ -56,12 +56,9 @@ function drawSpectrum() {
         const end = Math.floor((i + 1) * (bufferLength * FREQUENCY_RANGE) / BAR_COUNT);
         let value = 0;
 
-        for (let j = start; j < end; j++) {
-            value = Math.max(value, dataArray[j]);
-        }
+        for (let j = start; j < end; j++) value = Math.max(value, dataArray[j]);
 
         let normalized = value / 255;
-
         normalized = Math.pow(normalized, 1.5);
 
         const position = i / (BAR_COUNT - 1);
@@ -76,10 +73,7 @@ function drawSpectrum() {
         const riseSpeed = 0.025;
         const fallSpeed = 0.08;
 
-        const smoothing = targetHeight > smoothedBars[i]
-            ? 1 - Math.exp(-riseSpeed * deltaTime)
-            : 1 - Math.exp(-fallSpeed * deltaTime);
-
+        const smoothing = targetHeight > smoothedBars[i] ? 1 - Math.exp(-riseSpeed * deltaTime) : 1 - Math.exp(-fallSpeed * deltaTime);
         smoothedBars[i] += (targetHeight - smoothedBars[i]) * smoothing;
 
         const x = i * barWidth;
@@ -113,12 +107,7 @@ function drawSpectrum() {
         ctx.shadowBlur = 8;
         ctx.shadowColor = "#00000000";
 
-        ctx.fillRect(
-            x,
-            y,
-            actualBarWidth,
-            smoothedBars[i]
-        );
+        ctx.fillRect(x, y, actualBarWidth, smoothedBars[i]);
     }
 
     ctx.shadowBlur = 0;
@@ -131,7 +120,7 @@ disableCanvas.addEventListener('change', () => {
             cancelAnimationFrame(animationId);
             animationId = null;
         }
-        ctx.clearRect(0,0,canvas.width,canvas.height); // CLEAR CANVAS
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // CLEAR CANVAS
     } else {
         spectrumEnabled = true;
         lastTime = performance.now();
@@ -144,7 +133,6 @@ disableVideo.addEventListener('change', () => { if (disableVideo.checked) videoB
 document.addEventListener('keydown', (event) => {
     if (event.key.toLowerCase() == 'e') disableCanvas.checked = !disableCanvas.checked;disableCanvas.dispatchEvent(new Event("change"));
     if (event.key.toLowerCase() == 'v') disableVideo.checked = !disableVideo.checked;disableVideo.dispatchEvent(new Event("change"));
-
 });
 
 spectrumEnabled = true;

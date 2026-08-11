@@ -29,22 +29,10 @@ function updateSchedule() {
     const minutes = now.getMinutes();
     const currentMinutes = hour * 60 + minutes;
 
-    // MORNIN' WAVES: 06:00 - 12:00
-    if (currentMinutes >= 360 && currentMinutes < 720) {
-        activeHour = 0;
-    }
-    // AFTERNOON GROOVES: 12:00 - 18:00
-    else if (currentMinutes >= 720 && currentMinutes < 1080) {
-        activeHour = 1;
-    }
-    // NIGHT RIDE: 18:00 - 00:00
-    else if (currentMinutes >= 1080) {
-        activeHour = 2;
-    }
-    // MIDNIGHT CITY: 00:00 - 06:00
-    else {
-        activeHour = 3;
-    }
+    if (currentMinutes >= 360 && currentMinutes < 720) activeHour = 0; // MORNIN' WAVES: 06:00 - 12:00
+    else if (currentMinutes >= 720 && currentMinutes < 1080) activeHour = 1; // AFTERNOON GROOVES: 12:00 - 18:00
+    else if (currentMinutes >= 1080) activeHour = 2; // NIGHT RIDE: 18:00 - 00:00
+    else activeHour = 3; // MIDNIGHT CITY: 00:00 - 06:00
 
     hours.forEach(schedule => {
         schedule.querySelectorAll('h2, h3').forEach(element => {
@@ -53,22 +41,18 @@ function updateSchedule() {
             element.style.fontSize = 'clamp(6px, 14px, 16px)';
         });
     });
+    
     hours[activeHour].querySelectorAll('h2, h3').forEach(element => {
         element.style.color = '#e01f83';
         element.style.fontWeight = '900';
         element.style.fontSize = 'clamp(8px, 16px, 18px)';
     });
 
-    headers.forEach((element, i) => {
-        element.textContent = titles[i];
-    });
-
+    headers.forEach((element, i) => { element.textContent = titles[i]; });
     headers[activeHour].textContent = "▶ " + titles[activeHour];
 }
 
-spotifyBtn.addEventListener('click', () => {
-    window.open(playlists[activeHour])
-});
+spotifyBtn.addEventListener('click', () => { window.open(playlists[activeHour]) });
 
 updateSchedule();
 setInterval(updateSchedule, 10);

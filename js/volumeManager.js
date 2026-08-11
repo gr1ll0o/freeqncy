@@ -22,13 +22,8 @@ gainNode.connect(analyser);
 analyser.connect(audioContext.destination);
 
 for (let i = 0; i < TOTAL; i++) {
-
     const angle = -135 + i * (270 / (TOTAL - 1));
-
-    const tick = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "line"
-    );
+    const tick = document.createElementNS("http://www.w3.org/2000/svg", "line");
 
     tick.setAttribute("x1", 110);
     tick.setAttribute("y1", 18);
@@ -36,11 +31,7 @@ for (let i = 0; i < TOTAL; i++) {
     tick.setAttribute("x2", 110);
     tick.setAttribute("y2", 6);
 
-    tick.setAttribute(
-        "transform",
-        `rotate(${angle} 110 110)`
-    );
-
+    tick.setAttribute("transform", `rotate(${angle} 110 110)`);
     ticks.appendChild(tick);
 }
 
@@ -61,17 +52,9 @@ function setVolume(v) {
 
     const angle = -135 + v * 270;
 
-    needle.setAttribute(
-        "transform",
-        `rotate(${angle} 110 110)`
-    );
+    needle.setAttribute("transform", `rotate(${angle} 110 110)`);
 
-    tickList.forEach((t, i) => {
-        t.classList.toggle(
-            "active",
-            i <= v * (TOTAL - 1)
-        );
-    });
+    tickList.forEach((t, i) => { t.classList.toggle("active", i <= v * (TOTAL - 1)); });
 }
 
 setVolume(.65);
@@ -84,20 +67,14 @@ knob.addEventListener("pointerdown", async (e) => {
 });
 
 window.addEventListener("pointerup", () => dragging = false);
-window.addEventListener("pointermove", e => {
-    if (dragging) update(e);
-});
+window.addEventListener("pointermove", e => { if (dragging) update(e); });
 
 function update(e) {
     const rect = knob.getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
     const cy = rect.top + rect.height / 2;
 
-    let angle = Math.atan2(
-        e.clientY - cy,
-        e.clientX - cx
-    ) * 180 / Math.PI;
-
+    let angle = Math.atan2(e.clientY - cy, e.clientX - cx) * 180 / Math.PI;
     angle += 90;
 
     if (angle > 180) angle -= 360;
@@ -105,7 +82,6 @@ function update(e) {
     const volume = (angle + 135) / 270;
 
     setVolume(volume);
-
 }
 
 function toggleMute() {

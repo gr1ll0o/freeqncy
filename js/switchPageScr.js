@@ -8,7 +8,6 @@ function switchPage(i) {
     homeSelector.classList.remove('active');
     aboutSelector.classList.remove('active');
     switch (i) {
-
         case 0:
             home.style.display = 'grid';
             about.style.display = 'none';

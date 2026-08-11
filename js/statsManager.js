@@ -15,9 +15,7 @@ async function getPing() {
     const start = performance.now();
 
     try {
-        const res = await fetch(`${STREAM_URL}/status-json.xsl`, {
-            cache: "no-store"
-        });
+        const res = await fetch(`${STREAM_URL}/status-json.xsl`, { cache: "no-store" });
 
         const end = performance.now();
 
@@ -38,16 +36,12 @@ async function getPing() {
     }
 }
 
-
 async function getIcecastStats() {
     let data;
 
     try {
         const res = await fetch(`${STREAM_URL}/status-json.xsl`);
-
-        if (!res.ok) {
-            throw new Error(`HTTP Error: ${res.status}`);
-        }
+        if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
 
         data = await res.json();
         if (!data.icestats.source) { // No mount
@@ -87,9 +81,7 @@ async function getIcecastStats() {
         const coverPath = `assets/covers/${coverName}.jpg`;
         
         coverAlbumDisplay.innerHTML = `<img src="${coverPath}">`
-    }catch (error) {
-        console.log("Loading new song data...")
-    }
+    }catch (error) { console.log("Loading new song data...") }
 
     // Status !!! //
     statusDisplay.textContent = "STATUS: ONLINE";

@@ -73,8 +73,9 @@
                     <span class="max">MAX</span>
                 </div>
                 <div style="height: 100%;display: flex;flex-direction: column;justify-content: center;">
-                    <div style="display: flex;gap:0.5em;font-size: 12px;">
-                    <input type="checkbox" name="disable-eq" id="disable-eq">Disable the EQ effect
+                    <div style="display: flex;gap:0.5em;font-size: 12px;justify-content: space-around;">
+                    <input type="checkbox" name="disable-eq" id="disable-eq">Disable EQ
+                    <input type="checkbox" name="disable-video" id="disable-video">Disable Video
                     </div>
                     <input type="button" id="refresh-stream" value="Refresh Stream">
                 </div>
@@ -82,7 +83,7 @@
         </section>
 
         <section class="center-section">
-            <video class="background-video" autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload noplaybackrate">
+            <video id="video-bg" class="background-video" autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload noplaybackrate">
                 <source src="assets/videos/lobby-background.mp4" type="video/mp4">
             </video>
 
@@ -170,7 +171,7 @@
                 broadcast or to represent any artist. All rights are reserved and upheld by the platform, without the use<br>
                 of advertising, subscriptions, or financial gain derived from the artists' work. ⚠️<br><br>
             </p>
-            <p id="credits">v0.8 BETA</p>
+            <p id="credits">v0.9.2 BETA</p>
             <p id="credits">Made with ❤️ and lots of ☕ by Grillo.</p>
         </section>
     </div>

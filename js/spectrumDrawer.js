@@ -1,5 +1,7 @@
 const canvas = document.getElementById("spectrum");
 const disableCanvas = document.querySelector('#disable-eq');
+const disableVideo = document.querySelector('#disable-video');
+const videoBg = document.getElementById("video-bg");
 const ctx = canvas.getContext("2d");
 
 const BAR_COUNT = 40;
@@ -122,7 +124,7 @@ function drawSpectrum() {
     ctx.shadowBlur = 0;
 }
 
-disableCanvas.addEventListener("change", () => {
+disableCanvas.addEventListener('change', () => {
     if (disableCanvas.checked) {
         spectrumEnabled = false; // STOP ANIMATION
         if (animationId !== null) {
@@ -136,6 +138,8 @@ disableCanvas.addEventListener("change", () => {
         drawSpectrum();
     }
 });
+
+disableVideo.addEventListener('change', () => { if (disableVideo.checked) videoBg.style.display = 'none'; else videoBg.style.display = 'block'; });
 
 spectrumEnabled = true;
 lastTime = performance.now();

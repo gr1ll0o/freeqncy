@@ -109,7 +109,8 @@ knob.addEventListener("wheel", e => {
 }, { passive: false });
 
 document.addEventListener('keydown', (event) => {
-    if (event.key == '+') setVolume(volume+0.05);
-    if (event.key == '-') setVolume(volume-0.05);
+    console.log(event.key);
+    if (event.key == '+' || event.key == "ArrowUp") setVolume(volume+0.05);
+    if (event.key == '-' || event.key == "ArrowDown") setVolume(volume-0.05);
     if (event.key.toLowerCase() == 'm') toggleMute();
 });

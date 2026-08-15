@@ -71,6 +71,12 @@ body::before {
     border-radius: 24px;
     padding: 8px;
     margin: 2px;
+    transition: all ease-out 0.5s;
+}
+
+.genres-container>div:hover {
+    background-color: #47354eb6;
+    font-size: 1.1em;
 }
 
 .panel-title {

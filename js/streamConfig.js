@@ -1,1 +1,1 @@
-const STREAM_URL = "https://betting-vcr-connectors-slideshow.trycloudflare.com";
+const STREAM_URL = "https://restrict-vii-bloomberg-motorola.trycloudflare.com";

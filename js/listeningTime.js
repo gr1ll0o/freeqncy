@@ -21,7 +21,6 @@ function updateCurrentTime() {
     let time = `${h}:${m}`;
 
     currentTime.textContent = time;
-    console.log(time);
 }
 
 function startListeningTime() {

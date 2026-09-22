@@ -70,7 +70,7 @@ async function getIcecastStats() {
         let [artist, titleAlbum] = songData.split(" - ");
         let [title, album] = titleAlbum.split(" | ");
         
-        document.title = "FREEQNCY | " + title;
+        document.title =  title + " | FREEQNCY";
         songNameDisplay.textContent = title;
         artistNameDisplay.textContent = artist;
 

@@ -101,7 +101,6 @@ body::before {
 }
 
 #logo {
-    margin-top: -15px;
     transition: all ease 0.5s; 
 }
 
@@ -160,8 +159,18 @@ header>div:last-child {
     justify-self: end;
 }
 
-header img {
+#logo {
+    margin-top: 0;
+    display: block;
     height: 100px;
+}
+
+header>div:first-child {
+    margin-left: 3px;
+    justify-self: start;
+    align-self: center;
+    display: flex;
+    align-items: center;
 }
 
 header li {
